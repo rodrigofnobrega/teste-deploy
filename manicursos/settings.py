@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.footer',
     'apps.home',
     'apps.videos',
+    'apps.pais_profs',
 ]
 
 MIDDLEWARE = [
