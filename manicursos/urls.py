@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('apps.home.urls')),
     path('', include('apps.videos.urls')),
     path('', include('apps.pais_profs.urls')),
+    path('', include('apps.forum.urls')),
 ]
 
 

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.home',
     'apps.videos',
     'apps.pais_profs',
+    'apps.forum',
 ]
 
 MIDDLEWARE = [
