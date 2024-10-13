@@ -32,20 +32,13 @@
         </h2>
 
         <div id="tools-items" class="row justify-content-between overflow-auto">
-            <div class="tool box col-md-3 text-justify d-flex flex-column animate__animated animate__fadeInUp">
-                <h4 class="mt-auto">???</h4>
-                <p>Lorem ipsum dolor sit amet</p>
-            </div>
-
+            {% for t in tools %}
             <div class="tool box col-md-3 mb-3 text-justify d-flex flex-column animate__animated animate__fadeInUp">
-                <h4 class="mt-auto">Atividades <span class="highlight-color italic fw-normal">criativas</span></h4>
-                <p>Lorem ipsum dolor sit amet</p>
+                <img class="profile-img" src="{{ t.image.url }}" alt="{{ t.desciption }}">
+                <h4 class="mt-auto">Atividades <span class="highlight-color italic fw-normal">{{ t.title }}</span></h4>
+                <p>{{ t.description }}</p>
             </div>
-
-            <div class="tool box col-md-3 mb-3 text-justify d-flex flex-column animate__animated animate__fadeInUp">
-                <h4 class="mt-auto">Jogos <span class="highlight-color italic fw-normal">educacionais</span></h4>
-                <p>Lorem ipsum dolor sit amet</p>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
