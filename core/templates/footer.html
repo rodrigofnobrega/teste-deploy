@@ -22,27 +22,27 @@
             <div class="footerColumn">
                 <h2>CONTATO</h2>
 
-                {% for c in footerContacts %}
+                {% for fc in footerContacts %}
 
                 <div class="columnContent">
-                    <p>{{ c.phoneNumber}}</p>
-                    <p>{{ c.email}}</p>
+                    <p>{{ fc.phoneNumber}}</p>
+                    <p>{{ fc.email}}</p>
                 </div>
 
                 <div class="columnContent">
-                    <p>{{c.address}}</p>
+                    <p>{{fc.address}}</p>
                 </div>
 
                 <div class="socialMedia">
-                    <a href="{{ c.instagram }}" target="_blank">
+                    <a href="{{ fc.instagram }}" target="_blank">
                         <img src="{% static 'imgs/footer/instagram.png' %}" alt="Instagram">
                     </a>
 
-                    <a href="{{ c.facebook }}" target="_blank">
+                    <a href="{{ fc.facebook }}" target="_blank">
                         <img src="{% static 'imgs/footer/facebook.png' %}" alt="Facebook">
                     </a>
 
-                    <a href="{{ c.youtube }}" target="_blank">
+                    <a href="{{ fc.youtube }}" target="_blank">
                         <img src="{% static 'imgs/footer/youtube.png' %}" alt="Youtube">
                     </a>
                 </div>
@@ -51,12 +51,22 @@
 
             <div class="footerColumn">
                 <h2>INFORMAÇÕES</h2>
-
                 <div class="columnContent">
-                    <p>Exames Laboratoriais</p>
-                    <p>Consultas Veterinarias</p>
-                    <p>Plano PET de sáude</p>
-                    <p>Quem somos?</p>
+                    {% for fi in footerInformations %}
+                    
+                    <a href="{{ fi.randomUrl1 }}" target="_blank">
+                         <p>Exames Laboratoriais</p> 
+                    </a>
+                    <a href="{{ fi.randomUrl2 }}" target="_blank"> 
+                        <p>Consultas Veterinarias</p> 
+                    </a>
+                    <a href="{{ fi.randomUrl3 }}" target="_blank"> 
+                        <p>Plano PET de sáude</p> 
+                    </a>
+                    <a href="{{ fi.whoAreWe }}" target="_blank"> 
+                        <p>Quem somos?</p> 
+                    </a>
+                    {% endfor %}
                 </div>
             </div>            
         </div>
