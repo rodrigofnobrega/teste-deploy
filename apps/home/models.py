@@ -11,7 +11,7 @@ class Tool(models.Model):
 class Team(models.Model):
     image = models.ImageField(upload_to = 'images/', verbose_name = 'Imagem')
     name = models.CharField(max_length = 25, verbose_name = 'Nome')
-    profession = models.CharField(max_length = 150, verbose_name = 'Titulo')
+    profession = models.CharField(max_length = 150, verbose_name = 'Profissão')
     
     def __str__(self):
         return f'{self.name} - {self.profession} - {self.image}'

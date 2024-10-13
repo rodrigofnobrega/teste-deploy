@@ -1,3 +1,10 @@
+{% extends "templates.html" %}
+{% load static %}
+{% block 'head'%}
+<link id="page-css" rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock 'head' %}
+{% block 'body'%}
+{% include "navbar.html" %}
 <div id="home">
     <section id="intro" class="col-12 text-center d-flex flex-column justify-content-center mb-5 drawing-container">
         <h1 class="mb-5 col-12 animate__animated animate__fadeInUp">
@@ -25,69 +32,40 @@
         </h2>
 
         <div id="tools-items" class="row justify-content-between overflow-auto">
-            <div class="tool box col-md-3 text-justify d-flex flex-column animate__animated animate__fadeInUp">
-                <h4 class="mt-auto">???</h4>
-                <p>Lorem ipsum dolor sit amet</p>
-            </div>
-
+            {% for t in tools %}
             <div class="tool box col-md-3 mb-3 text-justify d-flex flex-column animate__animated animate__fadeInUp">
-                <h4 class="mt-auto">Atividades <span class="highlight-color italic fw-normal">criativas</span></h4>
-                <p>Lorem ipsum dolor sit amet</p>
+                <img class="profile-img" src="{{ t.image.url }}" alt="{{ t.desciption }}">
+                <h4 class="mt-auto">Atividades <span class="highlight-color italic fw-normal">{{ t.title }}</span></h4>
+                <p>{{ t.description }}</p>
             </div>
-
-            <div class="tool box col-md-3 mb-3 text-justify d-flex flex-column animate__animated animate__fadeInUp">
-                <h4 class="mt-auto">Jogos <span class="highlight-color italic fw-normal">educacionais</span></h4>
-                <p>Lorem ipsum dolor sit amet</p>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
     <section id="team" class="col-12 p-5 mb-5 animate__animated animate__fadeInUp">
         <div id="presentation" class="d-flex col-12 justify-content-between">
-            <img class="img-fluid d-none d-md-block" src="/assets/imgs/videos/star-y.svg" alt="Yellow Star">
+            <img class="img-fluid d-none d-md-block" src="{% static 'imgs/videos/star-y.svg' %}" alt="Yellow Star">
             <h2 class="mb-5 text-center">
                 <span class="italic fw-normal">Nossa equipe</span> conta com os <span
                     class="highlight-color italic fw-normal">melhores e mais</span> <br>
                 <span class="highlight-color italic fw-normal">preparados</span> profissionais para criar o <br>
                 melhor conteúdo para <span class="highlight-color italic fw-normal">sua criança</span>
             </h2>
-            <img src="/assets/imgs/videos/star-g.svg" alt="Grey Star" class="mt-5 d-none d-md-block" style="height: 108px; width: 110px;">
+            <img src="{% static 'imgs/videos/star-g.svg' %}" alt="Grey Star" class="mt-5 d-none d-md-block" style="height: 108px; width: 110px;">
         </div>
         
         <div id="members-slider" class="d-flex align-items-center justify-content-center mx-auto col-md-9 col-12">
             <i id="chevron-left" class="fa-solid fa-chevron-left"></i>
             <div id="profiles" class="row w-100 justify-content-center">
-                <div id="member1" class="profile col-md-3 col-12 text-center mb-4">
+                {% for t in team %}
+                <div class="profile col-md-3 col-12 text-center mb-4">
                     <div class="profile-img">
-                        <img src="../assets/imgs/home/team/isaac.png" alt="Isaac picture" class="img-fluid mb-3">
+                        <img src="{{ t.image.url }}" alt="{{ t.name }}" class="img-fluid mb-3">
                     </div>
-                    <h4 class="mb-3">Isaac Lima</h4>
-                    <p>Psicólogo Infantil <br> CRP 0000000</p>
+                    <h4 class="mb-3">{{ t.name }}</h4>
+                    <p>{{ t.profession }}</p>
                 </div>
-    
-                <div id="member2" class="profile col-md-3 col-12 text-center mb-4">
-                    <div class="profile-img">
-                        <img src="../assets/imgs/home/team/annelise.png" alt="Annelise picture" class="img-fluid mb-3">
-                    </div>
-                    <h4 class="mb-3">Annelise Figueiredo</h4>
-                    <p>Pedagoga especializada <br> em Ensino Bilingue</p>
-                </div>
-    
-                <div id="member3" class="profile col-md-3 col-12 text-center mb-4">
-                    <div class="profile-img">
-                        <img src="../assets/imgs/home/team/malu.png" alt="Malu picture" class="img-fluid mb-3">
-                    </div>
-                    <h4 class="mb-3">Malu Queiroz</h4>
-                    <p>Nutricionista Infantil <br> CRN 00000/P</p>
-                </div>
-    
-                <div id="member4" class="profile col-md-3 col-12 text-center mb-4">
-                    <div class="profile-img">
-                        <img src="../assets/imgs/home/team/leo.png" alt="Leonardo picture" class="img-fluid mb-3">
-                    </div>
-                    <h4 class="mb-3">Leonardo Matos</h4>
-                    <p>Pediatra <br> CRM/RN 000000</p>
-                </div>
+                {% endfor %}
             </div>
             <i id="chevron-right" class="fa-solid fa-chevron-right"></i>
         </div>
@@ -102,17 +80,17 @@
 
         <div id="forum-items" class="row justify-content-between">
             <div class="forum-item col-md-3">
-                <img src="../assets/imgs/home/forum/books.jpeg" class="box img-fluid col-12">
+                <img src="{% static 'imgs/home/forum/books.jpeg' %}" class="box img-fluid col-12">
                 <h4 class="text-dark text-justify">Lorem ipsum dolor sit amet, consectetur</h4>
             </div>
 
             <div class="forum-item col-md-3">
-                <img src="../assets/imgs/home/forum/family.jpeg" class="box img-fluid col-12">
+                <img src="{% static 'imgs/home/forum/family.jpeg' %}" class="box img-fluid col-12">
                 <h4>Lorem ipsum dolor sit amet, consectetur</h4>
             </div>
 
             <div class="forum-item col-md-3">
-                <img src="../assets/imgs/home/forum/pencils.jpeg" class="box img-fluid col-12">
+                <img src="{% static 'imgs/home/forum/pencils.jpeg' %}" class="box img-fluid col-12">
                 <h4>Lorem ipsum dolor sit amet, consectetur</h4>
             </div>
         </div>
@@ -144,19 +122,23 @@
 
         <div id="forum-items" class="row justify-content-between overflow-auto">
             <div class="forum-item col-md-3">
-                <img src="../assets/imgs/home/support/coloring.jpeg" class="box img-fluid col-12">
+                <img src="{% static 'imgs/home/support/coloring.jpeg' %}" class="box img-fluid col-12">
                 <h4 class="text-dark text-justify">Desenhos para colorir</h4>
             </div>
 
             <div class="forum-item col-md-3">
-                <img src="../assets/imgs/home/support/cards.jpeg" class="box img-fluid col-12">
+                <img src="{% static 'imgs/home/support/cards.jpeg' %}" class="box img-fluid col-12">
                 <h4>Cartões didáticos</h4>
             </div>
 
             <div class="forum-item col-md-3">
-                <img src="../assets/imgs/home/support/lorem.jpeg" class="box img-fluid col-12">
+                <img src="{% static 'imgs/home/support/lorem.jpeg' %}" class="box img-fluid col-12">
                 <h4>Outros materiais</h4>
             </div>
         </div>
     </section>    
 </div>
+
+{% include "footer.html" %}
+
+{% endblock 'body' %}

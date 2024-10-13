@@ -1,18 +1,3 @@
-// Função para carregar o navbar e o footer
-function loadComponents() {
-    loadComponent('navbar', '/assets/components/navbar.html');
-    loadComponent('footer', '/assets/components/footer.html');
-}
-
-// Carrega componentes genéricos como o navbar e o footer
-function loadComponent(elementId, url) {
-    fetch(url)
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById(elementId).innerHTML = html;
-        })
-        .catch(error => console.error(`Error loading ${elementId}:`, error));
-}
 
 // Função para inicializar a navegação entre perfis, se existirem
 function initializeProfileNavigation() {
