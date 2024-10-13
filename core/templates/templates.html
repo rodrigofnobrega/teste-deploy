@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,29 +10,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/2241ec2548.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href= {% static "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" %} />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <title>Sabidinhos</title>
     <!-- CSS global, aplicado em todas as páginas -->
-    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <!-- 
         Espaço para o CSS dinâmico:
         Cada página possui seu CSS específico
       -->
-    <link id="page-css" rel="stylesheet" href="">
+    {% block 'head' %} {%endblock 'head'%}
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <div id="navbar"></div>
+    <div id="content" class="mt-5 pt-3 text-center">
+        {% block 'body' %} {%endblock 'body'%}
+    </div>
 
-    <!-- Conteúdo dinâmico -->
-    <div id="content" class="mt-5 pt-3 text-center"></div>
-
-    <div id="footer" class="mt-auto"></div>
-
-    <script src="assets/js/app.js"></script>
-    <script src="/assets/js/components.js"></script>
-    <script src="/assets/js/drawingComponents.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/components.js' %}"></script>
+    <script src="{% static 'js/drawingComponents.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/2241ec2548.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

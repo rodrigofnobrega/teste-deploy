@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="svg-container">
     <svg width="1440" height="203" viewBox="0 0 1440 203" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -13,7 +15,7 @@
         
         <div class="columnsContainer flex-wrap">
             <div class="footerColumn logoColumn justify-content-between">
-                <img class="logo" src="/assets/imgs/logo.png" alt="App Logo">
+                <img class="logo" src="{% static 'imgs/logo.png' %}" alt="App Logo">
                 <div>EJECT &copy; Algun Direitos Reservados</div>          
             </div>
 
@@ -32,15 +34,15 @@
 
                 <div class="socialMedia">
                     <a href="https://instagram.com">
-                        <img src="/assets/imgs/footer/instagram.png" alt="Instagram">
+                        <img src="{% static 'imgs/footer/instagram.png' %}" alt="Instagram">
                     </a>
 
                     <a href="https://facebook.com">
-                        <img src="/assets/imgs/footer/facebook.png" alt="Facebook">
+                        <img src="{% static 'imgs/footer/facebook.png' %}" alt="Facebook">
                     </a>
 
                     <a href="https://youtube.com">
-                        <img src="/assets/imgs/footer/youtube.png" alt="Youtube">
+                        <img src="{% static 'imgs/footer/youtube.png' %}" alt="Youtube">
                     </a>
                 </div>
             </div>
