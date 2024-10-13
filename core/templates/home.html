@@ -64,37 +64,15 @@
         <div id="members-slider" class="d-flex align-items-center justify-content-center mx-auto col-md-9 col-12">
             <i id="chevron-left" class="fa-solid fa-chevron-left"></i>
             <div id="profiles" class="row w-100 justify-content-center">
-                <div id="member1" class="profile col-md-3 col-12 text-center mb-4">
+                {% for t in team %}
+                <div class="profile col-md-3 col-12 text-center mb-4">
                     <div class="profile-img">
-                        <img src="{% static 'imgs/home/team/isaac.png' %}" alt="Isaac picture" class="img-fluid mb-3">
+                        <img src="{{ t.image.url }}" alt="{{ t.name }}" class="img-fluid mb-3">
                     </div>
-                    <h4 class="mb-3">Isaac Lima</h4>
-                    <p>Psicólogo Infantil <br> CRP 0000000</p>
+                    <h4 class="mb-3">{{ t.name }}</h4>
+                    <p>{{ t.profession }}</p>
                 </div>
-    
-                <div id="member2" class="profile col-md-3 col-12 text-center mb-4">
-                    <div class="profile-img">
-                        <img src="{% static 'imgs/home/team/annelise.png' %}" alt="Annelise picture" class="img-fluid mb-3">
-                    </div>
-                    <h4 class="mb-3">Annelise Figueiredo</h4>
-                    <p>Pedagoga especializada <br> em Ensino Bilingue</p>
-                </div>
-    
-                <div id="member3" class="profile col-md-3 col-12 text-center mb-4">
-                    <div class="profile-img">
-                        <img src="{% static 'imgs/home/team/malu.png' %}" alt="Malu picture" class="img-fluid mb-3">
-                    </div>
-                    <h4 class="mb-3">Malu Queiroz</h4>
-                    <p>Nutricionista Infantil <br> CRN 00000/P</p>
-                </div>
-    
-                <div id="member4" class="profile col-md-3 col-12 text-center mb-4">
-                    <div class="profile-img">
-                        <img src="{% static 'imgs/home/team/leo.png' %}" alt="Leonardo picture" class="img-fluid mb-3">
-                    </div>
-                    <h4 class="mb-3">Leonardo Matos</h4>
-                    <p>Pediatra <br> CRM/RN 000000</p>
-                </div>
+                {% endfor %}
             </div>
             <i id="chevron-right" class="fa-solid fa-chevron-right"></i>
         </div>
