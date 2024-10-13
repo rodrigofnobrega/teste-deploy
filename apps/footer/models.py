@@ -18,4 +18,4 @@ class Information(models.Model):
     whoAreWe = models.URLField(max_length = 255, verbose_name = 'Quem somos')
     
     def __str__(self):
-        return f'{self.whoAreWe} - {self.randomURL1} - {self.randomURL2} - {self.randomURL3}'
+        return f'{self.whoAreWe} - {self.randomUrl1} - {self.randomUrl2} - {self.randomUrl3}'

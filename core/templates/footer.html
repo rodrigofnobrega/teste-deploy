@@ -22,29 +22,31 @@
             <div class="footerColumn">
                 <h2>CONTATO</h2>
 
+                {% for c in footerContacts %}
+
                 <div class="columnContent">
-                    <p>+55 21 99999-9999</p>
-                    <p>contato@sabidinhos.com</p>
+                    <p>{{ c.phoneNumber}}</p>
+                    <p>{{ c.email}}</p>
                 </div>
 
                 <div class="columnContent">
-                    <p>Rua ali perto, 2000 - Candelária</p>
-                    <p>Rio Grande do Norte - RN</p>
+                    <p>{{c.address}}</p>
                 </div>
 
                 <div class="socialMedia">
-                    <a href="https://instagram.com">
+                    <a href="{{ c.instagram }}" target="_blank">
                         <img src="{% static 'imgs/footer/instagram.png' %}" alt="Instagram">
                     </a>
 
-                    <a href="https://facebook.com">
+                    <a href="{{ c.facebook }}" target="_blank">
                         <img src="{% static 'imgs/footer/facebook.png' %}" alt="Facebook">
                     </a>
 
-                    <a href="https://youtube.com">
+                    <a href="{{ c.youtube }}" target="_blank">
                         <img src="{% static 'imgs/footer/youtube.png' %}" alt="Youtube">
                     </a>
                 </div>
+                {% endfor %}
             </div>
 
             <div class="footerColumn">
