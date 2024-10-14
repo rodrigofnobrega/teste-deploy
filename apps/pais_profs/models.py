@@ -8,7 +8,7 @@ class TopDesc(models.Model):
     def __str__(self):
         return f'{self.description}'
     
-class DrawingAndCardAndKnow(models.Model):
+class Material(models.Model):
     image = models.ImageField(upload_to = 'images/', verbose_name = 'Imagem')
     file = models.FileField(upload_to = 'downloads/', blank=True, null=True, verbose_name = 'Arquivo para Download')
     type = models.CharField(max_length=20, choices=getTypeChoices())
