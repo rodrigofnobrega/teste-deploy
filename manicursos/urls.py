@@ -25,7 +25,7 @@ urlpatterns = [
     path('', include('apps.home.urls')),
     path('footer/', include('apps.footer.urls')),
     path('videos/', include('apps.videos.urls')),
-    path('pais_profs/', include('apps.pais_profs.urls')),
+    path('parents/', include('apps.pais_profs.urls')),
     path('forum/', include('apps.forum.urls')),
 ]
 

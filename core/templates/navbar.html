@@ -12,16 +12,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto w-md-100 flex-column flex-lg-row justify-content-lg-between">
                 <li class="nav-item px-md-2 py-md-1 ms-2 text-center w-md-100">
-                    <a class="nav-link text-light active" href="#" onclick="navigate('home', this)">home</a>
+                    <a class="nav-link text-light active" href="{% url 'home' %}">home</a>
                 </li>
                 <li class="nav-item px-md-2 py-md-1 ms-2 text-center w-md-100">
-                    <a class="nav-link text-light" href="#" onclick="navigate('videos', this)">vídeos</a>
+                    <a class="nav-link text-light" href="{% url 'videos' %}">vídeos</a>
                 </li>
                 <li class="nav-item px-md-2 py-md-1 ms-2 text-center w-md-100">
-                    <a class="nav-link text-light" href="#" onclick="navigate('forum', this)">fórum</a>
+                    <a class="nav-link text-light" href="{% url 'forum' %}">fórum</a>
                 </li>
                 <li class="nav-item px-md-2 py-md-1 me-2 text-center w-md-100">
-                    <a class="nav-link text-light" href="#" onclick="navigate('parents', this)">pais & profs</a>
+                    <a class="nav-link text-light" href="{% url 'parents' %}">pais & profs</a>
                 </li>
             </ul>
             
