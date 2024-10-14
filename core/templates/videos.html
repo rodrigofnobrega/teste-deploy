@@ -44,33 +44,12 @@
     </div>
 
     <div class="cat-row d-flex justify-content-between mt-5 mb-5 overflow-auto animate__animated animate__fadeInLeft">
+        {% for c in categorys %}
         <div class="cat col-md-2 col-8"> 
-            <img src="{% static 'imgs/videos/categoria-1.png' %}">
-            <p>Lorem ipsum dolor sit amet, <br>
-                consectetur adipiscing elit. <br>
-                Phasellus at mauris quis.</p>
+            <img src="{% static 'imgs/videos/categoria-' %}{{ c.type }}.png">
+            <p>{{ c.description }}</p>
         </div>
-
-        <div class="cat col-md-2 col-8"> 
-            <img src="{% static 'imgs/videos/categoria-2.png' %}">
-            <p>Lorem ipsum dolor sit amet, <br>
-                consectetur adipiscing elit. <br>
-                Phasellus at mauris quis.</p>
-        </div>
-
-        <div class="cat col-md-2 col-8"> 
-            <img src="{% static 'imgs/videos/categoria-3.png' %}">
-            <p>Lorem ipsum dolor sit amet, <br>
-                consectetur adipiscing elit. <br>
-                Phasellus at mauris quis.</p>
-        </div>
-
-        <div class="cat col-md-2 col-8"> 
-            <img src="{% static 'imgs/videos/categoria-4.png' %}">
-            <p>Lorem ipsum dolor sit amet, <br>
-                consectetur adipiscing elit. <br>
-                Phasellus at mauris quis.</p>
-        </div>
+        {% endfor %}
     </div>
 
     <div class="videos-container animate__animated animate__fadeInUp"> 
@@ -129,7 +108,7 @@
 
         <div class="carousel">
             {% for v in videos%}
-            {% if v.type == 'interativas' %}
+            {% if v.type == 'interativo' %}
             <div class="carousel-cell"> 
                 <iframe src="{{ v.videoUrl }}"></iframe>
                 <p>{{ v.description }}</p>
