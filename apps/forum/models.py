@@ -1,4 +1,5 @@
 from django.db import models
+from .utils import getNameChoices
 
 class TopImageF(models.Model): #F de Fórum
     title = models.CharField(max_length = 250, verbose_name = 'Titulo')
@@ -19,7 +20,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name = 'comentarios', on_delete = models.CASCADE)  # Relaciona o comentário ao post
-    userNameComment = models.CharField(max_length = 100, verbose_name = 'Autor')  # Nome do autor do comentário
+    userNameComment = models.CharField(max_length = 100, verbose_name = 'Autor', choices=getNameChoices())  # Nome do autor do comentário
     commentDesc = models.TextField(verbose_name = 'Descrição') 
     date = models.DateTimeField(auto_now_add = True, verbose_name = 'Data') 
 
