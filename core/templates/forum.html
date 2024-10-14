@@ -1,3 +1,10 @@
+{% extends "templates.html" %}
+{% load static %}
+{% block 'head' %}
+<link id="page-css" rel="stylesheet" href="{% static 'css/parents.css' %}">
+{% endblock 'head' %}
+{% block 'body' %}
+{% include "navbar.html" %}
 <section id="forum-section">
     <div id="forum">
 
@@ -223,10 +230,12 @@
                     <div class="details">
                         <img src="../assets/imgs/forum/Vector.png">
                         <span> Criado à 3 meses</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-</section>
+    </section>
+</div>
+{% include "footer.html" %}
+{% endblock 'body' %}
