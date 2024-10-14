@@ -10,7 +10,6 @@ class TopImageV(models.Model): #V de Videos
     
 class Video(models.Model):
     type = models.CharField(max_length = 30, verbose_name = "Tipo")
-    thumb = models.ImageField(upload_to = 'images/', verbose_name = 'Imagem')
     videoUrl = models.URLField(max_length = 255, verbose_name='URL do Vídeo')
     description = models.CharField(max_length = 50, verbose_name = 'Descrição')
     
