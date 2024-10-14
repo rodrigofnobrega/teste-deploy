@@ -9,11 +9,12 @@
 
 <section id="parents" class="drawing-container d-flex flex-column col-12">
     <div id="intro" class="animate__animated animate__fadeInDown">
-        <h1>Juntos no aprendizado: <span class="custom-orange italic">recursos</span> para <span
-                class="primary-color italic">fortalecimento</span> da educação</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipis molestiae itaque? Eaque est nulla saepe possimus eligendi
-            minima, blanditiis quos voluptates, provident dolorum laborum suscipit. Sudo marte jupter e venus</p>
+        <h1>Juntos no aprendizado: <span class="custom-orange italic">recursos</span> para <span class="primary-color italic">fortalecimento</span> da educação</h1>
+        {% for top_desc in top_descs %}
+            <p>{{ top_desc.description }}</p>
+        {% endfor %}
     </div>
+</section>
 
 
     <div id="supportMaterials" class="animate__animated animate__fadeInUp">
