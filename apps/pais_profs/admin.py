@@ -3,8 +3,8 @@ from .models import TopDesc, DrawingAndCardAndKnow, CategoryP
 
 @admin.register(TopDesc)
 class TopDescAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description') 
-    search_fields = ('title', 'description')  
+    list_display = ('description',) 
+    search_fields = ('description',)  
     
 @admin.register(DrawingAndCardAndKnow)
 class DrawingAndCardAndKnowAdmin(admin.ModelAdmin):

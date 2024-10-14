@@ -6,7 +6,7 @@ class TopDesc(models.Model):
     description = models.TextField(verbose_name = 'Descrição')
     
     def __str__(self):
-        return f'{self.title} - {self.description}'
+        return f'{self.description}'
     
 class DrawingAndCardAndKnow(models.Model):
     image = models.ImageField(upload_to = 'images/', verbose_name = 'Imagem')
