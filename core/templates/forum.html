@@ -1,7 +1,7 @@
 {% extends "templates.html" %}
 {% load static %}
 {% block 'head' %}
-<link id="page-css" rel="stylesheet" href="{% static 'css/parents.css' %}">
+<link id="page-css" rel="stylesheet" href="{% static 'css/forum.css' %}">
 {% endblock 'head' %}
 {% block 'body' %}
 {% include "navbar.html" %}
@@ -30,9 +30,9 @@
                     <div class="img-ellipse-in"></div>
                 </div>
         
-                <img src="/assets/imgs/forum/forum-img-1.png" id="first">
-                <img src="/assets/imgs/forum/forum-img-2.png" id="second">
-                <img src="/assets/imgs/forum/forum-img-3.png" id="third">
+                <img src="{%static "/assets/imgs/forum/forum-img-1.png" %}" id="first">
+                <img src="{%static "/assets/imgs/forum/forum-img-2.png" %}" id="second">
+                <img src="{%static "/assets/imgs/forum/forum-img-3.png" %}" id="third">
             </div>
         </div>
 
@@ -44,7 +44,7 @@
                 <p>Adicionar um novo tópico</p><br>
             </div>
                 <div class="add-layout">
-                <img src="../assets/imgs/forum/botão add.png" onclick="form()">
+                <img src="{%static "../assets/imgs/forum/botão add.png" %}" onclick="form()">
             </div>
     </div>
 
@@ -71,7 +71,7 @@
         <div class="card-content">
             <div class="user-info">
                 <div class="user-icon-background">
-                    <img src="../assets/imgs/forum/Group 39892.png" alt="Ícone do Usuário" class="user-icon">
+                    <img src="{%static "../assets/imgs/forum/Group 39892.png" %}" alt="Ícone do Usuário" class="user-icon">
                 </div>
                 <div class="user-details">
                     <p class="user-name">Cavalo Anônimo</p>
@@ -84,8 +84,8 @@
             <p class="see-more">Ver mais</p>
             <div class="card-footer">
                 <div class="comment-section">
-                    <img src="../assets/imgs/forum/salvo.png" class="comment-section-s"> <!-- img save-->
-                    <img src="../assets/imgs/forum/comentario.png" class="comment-section-c"> <!-- img comment-->
+                    <img src="{%static "../assets/imgs/forum/salvo.png" %}" class="comment-section-s"> <!-- img save-->
+                    <img src="{%static "../assets/imgs/forum/comentario.png" %}" class="comment-section-c"> <!-- img comment-->
                     <span>Adicionar comentário</span>
                 </div>
                 <p class="social-info">
@@ -102,7 +102,7 @@
         <div class="card-content">
             <div class="user-info">
                 <div class="user-icon-background-2">
-                    <img src="../assets/imgs/forum/Group 39895.png" alt="Ícone do Usuário" class="user-icon">
+                    <img src="{%static "../assets/imgs/forum/Group 39895.png" %}" alt="Ícone do Usuário" class="user-icon">
                 </div>
                 <div class="user-details">
                     <p class="user-name">Cervo Anônimo</p>
@@ -115,8 +115,8 @@
             <p class="see-more">Ver mais</p>
             <div class="card-footer">
                 <div class="comment-section">
-                    <img src="../assets/imgs/forum/salvo.png" class="comment-section-sc"> <!-- img save-->
-                    <img src="../assets/imgs/forum/comentario.png" class="comment-section-c"> <!-- img comment-->
+                    <img src="{%static "../assets/imgs/forum/salvo.png" %}" class="comment-section-sc"> <!-- img save-->
+                    <img src="{%static "../assets/imgs/forum/comentario.png" %}" class="comment-section-c"> <!-- img comment-->
                     <span>Adicionar comentário</span>
                 </div>
                 <p class="social-info">
@@ -133,7 +133,7 @@
         <div class="card-content">
             <div class="user-info">
                 <div class="user-icon-background">
-                    <img src="../assets/imgs/forum/Group 39892.png" alt="Ícone do Usuário" class="user-icon">
+                    <img src="{%static "../assets/imgs/forum/Group 39892.png" %}" alt="Ícone do Usuário" class="user-icon">
                 </div>
                 <div class="user-details">
                     <p class="user-name">Cavalo Anônimo</p>
@@ -146,8 +146,8 @@
             <p class="see-more">Ver mais</p>
             <div class="card-footer">
                 <div class="comment-section">
-                    <img src="../assets/imgs/forum/salvo.png" class="comment-section-sc"> <!-- img save-->
-                    <img src="../assets/imgs/forum/comentario.png" class="comment-section-c"> <!-- img comment-->
+                    <img src="{%static "../assets/imgs/forum/salvo.png" %}" class="comment-section-sc"> <!-- img save-->
+                    <img src="{%static "../assets/imgs/forum/comentario.png" %}" class="comment-section-c"> <!-- img comment-->
                     <span>Adicionar comentário</span>
                 </div>
                 <p class="social-info">
@@ -178,8 +178,8 @@
             <p class="see-more">Ver mais</p>
             <div class="card-footer">
                 <div class="comment-section">
-                    <img src="../assets/imgs/forum/salvo.png" class="comment-section-sc"> <!-- img save-->
-                    <img src="../assets/imgs/forum/comentario.png" class="comment-section-c"> <!-- img comment-->
+                    <img src="{%static "../assets/imgs/forum/salvo.png" %}" class="comment-section-sc"> <!-- img save-->
+                    <img src="{%static "../assets/imgs/forum/comentario.png" %}" class="comment-section-c"> <!-- img comment-->
                     <span>Adicionar comentário</span>
                 </div>
                 <p class="social-info">
@@ -200,11 +200,11 @@
                     <h3> Lorem ipsum dolor sit amet</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Phasellus at mauris quis magna<br> aliquet condimentumt.</p>
                     <div class="details">
-                        <img src="../assets/imgs/forum/comentario.png">
+                        <img src="{%static "../assets/imgs/forum/comentario.png" %}">
                         <span>25 pessoas estão discutindo esse tópico</span>
                     </div>
                     <div class="details">
-                        <img src="../assets/imgs/forum/Vector.png">
+                        <img src="{%static "../assets/imgs/forum/Vector.png" %}">
                         <span> Criado à 3 meses</span>
                     </div>
                 </div>
@@ -212,11 +212,11 @@
                     <h3>Lorem ipsum dolor sit amet</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Phasellus at mauris quis magna<br> aliquet condimentumt.</p>
                     <div class="details">
-                        <img src="../assets/imgs/forum/comentario.png">
+                        <img src="{%static "../assets/imgs/forum/comentario.png" %}">
                         <span>25 pessoas estão discutindo esse tópico</span>
                     </div>
                     <div class="details">
-                        <img src="../assets/imgs/forum/Vector.png">
+                        <img src="{%static "../assets/imgs/forum/Vector.png" %}">
                         <span> Criado à 3 meses</span>
                     </div>
                 </div>
@@ -224,11 +224,11 @@
                     <h3>Lorem ipsum dolor sit amet</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Phasellus at mauris quis magna<br> aliquet condimentumt.</p>
                     <div class="details">
-                        <img src="../assets/imgs/forum/comentario.png">
+                        <img src="{%static "../assets/imgs/forum/comentario.png" %}">
                         <span>25 pessoas estão discutindo esse tópico</span>
                     </div>
                     <div class="details">
-                        <img src="../assets/imgs/forum/Vector.png">
+                        <img src="{%static "../assets/imgs/forum/Vector.png" %}">
                         <span> Criado à 3 meses</span>
                         </div>
                     </div>
