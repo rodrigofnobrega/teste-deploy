@@ -1,3 +1,10 @@
+{% extends "templates.html" %}
+{% load static %}
+{% block 'head'%}
+<link id="page-css" rel="stylesheet" href="{% static 'css/videos.css' %}">
+{% endblock 'head' %}
+{% block 'body'%}
+{% include "navbar.html" %}
 <section>
     <div class="vid-main drawing-container animate__animated animate__fadeIn">
         <h1 class="animate__animated animate__bounceIn"> 
@@ -8,25 +15,25 @@
 
         <div class="vid-img-grid animate__animated animate__fadeInUp"> 
             <div class="column">
-                <div class="image"><img src="/assets/imgs/videos/image-1.png"></div>
+                <div class="image"><img src="{% static 'imgs/videos/image-1.png' %}"></div>
             </div>
 
             <div class="column"> 
-                <div class="image"><img src="/assets/imgs/videos/image-2.png"></div>
-                <div class="image big"><img src="/assets/imgs/videos/image-3.png"></div>
+                <div class="image"><img src="{% static 'imgs/videos/image-2.png' %}"></div>
+                <div class="image big"><img src="{% static 'imgs/videos/image-3.png' %}"></div>
             </div>
 
             <div class="column">
-                <div class="image"><img src="/assets/imgs/videos/image-4.png"></div>
+                <div class="image"><img src="{% static 'imgs/videos/image-4.png' %}"></div>
             </div>
 
             <div class="column">
-                <div class="image big"><img src="/assets/imgs/videos/image-5.png"></div>
-                <div class="image"><img src="/assets/imgs/videos/image-6.png"></div>
+                <div class="image big"><img src="{% static 'imgs/videos/image-5.png' %}"></div>
+                <div class="image"><img src="{% static 'imgs/videos/image-6.png' %}"></div>
             </div>
 
             <div class="column">
-                <div class="image"><img src="/assets/imgs/videos/image-7.png"></div>
+                <div class="image"><img src="{% static 'imgs/videos/image-7.png' %}"></div>
             </div>
         </div>
 
@@ -38,28 +45,28 @@
 
     <div class="cat-row d-flex justify-content-between mt-5 mb-5 overflow-auto animate__animated animate__fadeInLeft">
         <div class="cat col-md-2 col-8"> 
-            <img src="/assets/imgs/videos/categoria-1.png">
+            <img src="{% static 'imgs/videos/categoria-1.png' %}">
             <p>Lorem ipsum dolor sit amet, <br>
                 consectetur adipiscing elit. <br>
                 Phasellus at mauris quis.</p>
         </div>
 
         <div class="cat col-md-2 col-8"> 
-            <img src="/assets/imgs/videos/categoria-2.png">
+            <img src="{% static 'imgs/videos/categoria-2.png' %}">
             <p>Lorem ipsum dolor sit amet, <br>
                 consectetur adipiscing elit. <br>
                 Phasellus at mauris quis.</p>
         </div>
 
         <div class="cat col-md-2 col-8"> 
-            <img src="/assets/imgs/videos/categoria-3.png">
+            <img src="{% static 'imgs/videos/categoria-3.png' %}">
             <p>Lorem ipsum dolor sit amet, <br>
                 consectetur adipiscing elit. <br>
                 Phasellus at mauris quis.</p>
         </div>
 
         <div class="cat col-md-2 col-8"> 
-            <img src="/assets/imgs/videos/categoria-4.png">
+            <img src="{% static 'imgs/videos/categoria-4.png' %}">
             <p>Lorem ipsum dolor sit amet, <br>
                 consectetur adipiscing elit. <br>
                 Phasellus at mauris quis.</p>
@@ -71,30 +78,16 @@
         <div class="title-rectangle orange-rectangle"></div>
 
         <div class="carousel">
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
 
+            {% for v in videos%}
+            {% if v.type == 'educativo' %}
             <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                <iframe src="{{ v.videoUrl }}"></iframe>
+                <p>{{ v.description }}</p>
             </div>
+            {% endif %}
+            {% endfor %}
 
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
         </div>
     </div>
 
@@ -103,30 +96,14 @@
         <div class="title-rectangle purple-rectangle"></div>
 
         <div class="carousel">
+            {% for v in videos%}
+            {% if v.type == 'tutorial' %}
             <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                <iframe src="{{ v.videoUrl }}"></iframe>
+                <p>{{ v.description }}</p>
             </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
 
@@ -135,30 +112,14 @@
         <div class="title-rectangle yellow-rectangle"></div>
 
         <div class="carousel">
+            {% for v in videos%}
+            {% if v.type == 'dormir' %}
             <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                <iframe src="{{ v.videoUrl }}"></iframe>
+                <p>{{ v.description }}</p>
             </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
 
@@ -167,30 +128,18 @@
         <div class="title-rectangle pink-rectangle"></div>
 
         <div class="carousel">
+            {% for v in videos%}
+            {% if v.type == 'interativas' %}
             <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                <iframe src="{{ v.videoUrl }}"></iframe>
+                <p>{{ v.description }}</p>
             </div>
+            {% endif %}
+            {% endfor %}
 
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-
-            <div class="carousel-cell"> 
-                <iframe src="https://www.youtube.com/embed/59GM_xjPhco"></iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
         </div>
     </div>
 </section>
+
+{% include "footer.html" %}
+{% endblock 'body' %}

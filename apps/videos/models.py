@@ -12,7 +12,7 @@ class Video(models.Model):
     type = models.CharField(max_length = 30, verbose_name = "Tipo")
     thumb = models.ImageField(upload_to = 'images/', verbose_name = 'Imagem')
     videoUrl = models.URLField(max_length = 255, verbose_name='URL do Vídeo')
-    title = models.CharField(max_length = 50, verbose_name = 'Titulo')
+    description = models.CharField(max_length = 50, verbose_name = 'Descrição')
     
     def __str__(self):
-        return f'{self.title} - {self.type}'
+        return f'{self.description} - {self.type}'

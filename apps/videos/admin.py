@@ -7,4 +7,4 @@ class TopImageVAdmin(admin.ModelAdmin):
 
 @admin.register(Video)
 class VideosAdmin(admin.ModelAdmin):
-    list_display = ('title', 'type', 'videoUrl', 'thumb')
+    list_display = ('description', 'type', 'videoUrl', 'thumb')
