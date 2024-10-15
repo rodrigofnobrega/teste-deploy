@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from ..footer.utils import getAllContacts, getAllInformations 
-from .models import TopDesc, DrawingAndCardAndKnow, CategoryP
+from .models import TopDesc, Material, CategoryP
 
 def parents(request):
     top_descs = TopDesc.objects.all()
-    drawings_and_cards = DrawingAndCardAndKnow.objects.all()
+    drawings_and_cards = Material.objects.all()
     categories = CategoryP.objects.all()
     
     context = {
