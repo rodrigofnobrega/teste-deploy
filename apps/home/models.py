@@ -15,3 +15,9 @@ class Team(models.Model):
     
     def __str__(self):
         return f'{self.name} - {self.profession} - {self.image}'
+    
+class TopDescH(models.Model):
+    description = models.TextField(verbose_name = 'Descrição')
+    
+    def __str__(self):
+        return f'{self.description}'
