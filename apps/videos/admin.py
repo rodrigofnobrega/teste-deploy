@@ -12,7 +12,7 @@ class VideoForm(forms.ModelForm):
 
 @admin.register(TopImageV)
 class TopImageVAdmin(admin.ModelAdmin):
-    list_display = ('title', 'image', 'description')
+    list_display = ('description',)
 
 @admin.register(Video)
 class VideosAdmin(admin.ModelAdmin):
