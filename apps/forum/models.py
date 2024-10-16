@@ -1,13 +1,13 @@
 from django.db import models
-from .utils import getNameChoices
+from .utils import getNameChoices, getPosTopImages
 
-class TopImageF(models.Model): #F de Fórum
-    title = models.CharField(max_length = 250, verbose_name = 'Titulo')
+class TopImage(models.Model):
     image = models.ImageField(upload_to = 'images/', verbose_name = 'Imagem')
+    pos = models.CharField(max_length = 20, choices=getPosTopImages())
     description = models.TextField(verbose_name = 'Descrição') 
     
     def __str__(self):
-        return f'{self.title} - {self.description}'
+        return f'{self.description}'
     
 class Post(models.Model):
     title = models.CharField(max_length = 200, verbose_name = 'Título')
@@ -35,3 +35,9 @@ class PopularTopic(models.Model):
     
     def __str__(self):
         return f'{self.title} - {self.subject} - {self.quantityComments} - {self.date}'
+    
+class PageDescription(models.Model):
+    description = models.CharField(max_length = 50, verbose_name = 'Descrição')
+    
+    def __str__(self):
+        return f'{self.description}'

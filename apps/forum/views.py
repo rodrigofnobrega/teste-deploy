@@ -3,13 +3,14 @@ from django.utils import timezone
 from random import choice
 from .utils import getNameChoices
 from ..footer.utils import getAllContacts, getAllInformations 
-from .models import Post, Comment, PopularTopic, TopImageF
+from .models import Post, Comment, PopularTopic, TopImage, PageDescription
 
 def forum(request):
     posts = Post.objects.all()
     comments = Comment.objects.all()
     popular_topics = PopularTopic.objects.all()
-    top_images = TopImageF.objects.all()
+    top_images = TopImage.objects.all()
+    description = PageDescription.objects.first()
     current_date = timezone.now()
 
     comentarios_por_post = {}
@@ -48,6 +49,7 @@ def forum(request):
         'comments': comentarios,  
         'popular_topics': popular_topics,
         'top_images': top_images,
+        'description': description,
     }
 
     return render(request, 'forum.html', context)
