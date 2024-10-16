@@ -1,10 +1,6 @@
-## <div  align="center"># Desafio Back-End-EJECT </div>
+<h1 align="center"> Desafio back-end - EJECT </h1>
 
-<div  align="center">
-
-<img  src="imgs/capaBack.png"  alt="Capa do Projeto">
-  
-</div>
+![Imagem de capa - desafio back-end](https://github.com/user-attachments/assets/783fa8ed-2a88-4a6b-9a75-2feaa1775df2)
 
 Este projeto consiste no desenvolvimento do back-end de uma plataforma educacional, que gerencia recursos e ferramentas voltadas para a educação. O projeto foi desenvolvido como parte do processo seletivo da Empresa Júnior da Escola de Ciências e Tecnologia da UFRN (EJECT).  
 
@@ -61,37 +57,34 @@ A estrutura básica do projeto está organizada da seguinte forma:
 
 1. Clone o repositório:
 
-`git clone https://github.com/seu-usuario/projeto-backend-eject.git`
+`git clone https://github.com/rodrigofnobrega/desafio-eject-back-end.git`
 
-2. Instale as dependências:
+2. Entre no diretório:
+
+`cd desafio-eject-back-end`
+
+3. Crie a venv:
+
+`python -m venv ./venv`
+`source venv/bin/activate`
+
+4. Instale as dependências:
 
 `pip install -r requirements.txt`
-`python -m pip install Pillow`
-`pip install django`
 
-3. Configure o banco de dados no arquivo `settings.py` (SQLite por padrão):
-
-> DATABASES = {
-
-> 'default': {
-
-> 'ENGINE': 'django.db.backends.sqlite3',
-
-> 'NAME': BASE_DIR / "db.sqlite3",
-
-> }
-
-> }
-
-  4. Aplique as migrações:
+5. Aplique as migrações:
 
 `python manage.py migrate`
 
-5. Execute o servidor de desenvolvimento:
+6. Crie um superusuário:
+
+`python manage.py createsuperuser`
+
+7. Execute o servidor de desenvolvimento:
 
 `python manage.py runserver`
 
-6. Acesse o projeto:
+8. Acesse o projeto:
 
 `http://127.0.0.1:8000/`
 
