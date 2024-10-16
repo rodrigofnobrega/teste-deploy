@@ -15,25 +15,53 @@
 
         <div class="vid-img-grid animate__animated animate__fadeInUp"> 
             <div class="column">
-                <div class="image"><img src="{% static 'imgs/videos/image-1.png' %}"></div>
+                <div class="image">
+                    {% for image in images_1 %}
+                        <img src="{{ image.image.url }}" alt="Image 1">
+                    {% endfor %}
+                </div>
             </div>
-
+        
             <div class="column"> 
-                <div class="image"><img src="{% static 'imgs/videos/image-2.png' %}"></div>
-                <div class="image big"><img src="{% static 'imgs/videos/image-3.png' %}"></div>
+                <div class="image">
+                    {% for image in images_2 %}
+                        <img src="{{ image.image.url }}" alt="Image 2">
+                    {% endfor %}
+                </div>
+                <div class="image big">
+                    {% for image in images_3 %}
+                        <img src="{{ image.image.url }}" alt="Image 3">
+                    {% endfor %}
+                </div>
             </div>
-
+        
             <div class="column">
-                <div class="image"><img src="{% static 'imgs/videos/image-4.png' %}"></div>
+                <div class="image">
+                    {% for image in images_4 %}
+                        <img src="{{ image.image.url }}" alt="Image 4">
+                    {% endfor %}
+                </div>
             </div>
-
+        
             <div class="column">
-                <div class="image big"><img src="{% static 'imgs/videos/image-5.png' %}"></div>
-                <div class="image"><img src="{% static 'imgs/videos/image-6.png' %}"></div>
+                <div class="image big">
+                    {% for image in images_5 %}
+                        <img src="{{ image.image.url }}" alt="Image 5">
+                    {% endfor %}
+                </div>
+                <div class="image">
+                    {% for image in images_6 %}
+                        <img src="{{ image.image.url }}" alt="Image 6">
+                    {% endfor %}
+                </div>
             </div>
-
+        
             <div class="column">
-                <div class="image"><img src="{% static 'imgs/videos/image-7.png' %}"></div>
+                <div class="image">
+                    {% for image in images_7 %}
+                        <img src="{{ image.image.url }}" alt="Image 7">
+                    {% endfor %}
+                </div>
             </div>
         </div>
 
