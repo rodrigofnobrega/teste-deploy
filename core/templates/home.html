@@ -17,10 +17,13 @@
             {{ topDescH }} 
         </p>
 
+    {% for btn in buttons %}
         <div class="btn px-3 py-2 mb-5 mx-auto col-md-2 col-lg-1 col-6 animate__animated animate__fadeInUp animate__delay-2s">
-            <a href="#"> Saber mais </a>
+            <a href="{{ btn.urls }}"> Saber mais </a>
             <i class="fas fa-angle-right ms-2"></i>
         </div>
+    {% endfor %}
+
     </section>
 
     <section id="tools" class="col-md-10 col-11 mx-auto m-5">
@@ -107,7 +110,7 @@
         </p>
 
         <div class="btn px-4 py-2 mb-5 fw-bold">
-            <a href="#" class="primary-color"> Assistir agora </a>
+            <a href= "{% url 'videos' %}" class="primary-color"> Assistir agora </a>
             <i class="fas fa-angle-right ms-2"></i>
         </div>
     </section>
