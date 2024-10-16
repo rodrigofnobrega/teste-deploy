@@ -7,4 +7,4 @@ class Contact(admin.ModelAdmin):
 
 @admin.register(Information)
 class InformationAdmin(admin.ModelAdmin):
-    list_display = ('whoAreWe', 'randomUrl1', 'randomUrl2', 'randomUrl3')
+    list_display = ('information_name', 'information_url',)

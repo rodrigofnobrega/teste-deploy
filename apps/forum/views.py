@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 from random import choice
 from .utils import getNameChoices
-from ..footer.utils import getAllContacts, getAllInformations 
+from ..footer.utils import getContact, getAllInformations 
 from .models import Post, Comment, PopularTopic, TopImage, PageDescription
 
 def forum(request):
@@ -43,7 +43,7 @@ def forum(request):
         post.comentado_por = list({comment.userNameComment for comment in comments if comment.post.id == post.id})
 
     context = {
-        'footerContacts': getAllContacts(),
+        'footerContact': getContact(),
         'footerInformations': getAllInformations(),
         'posts': posts,
         'comments': comentarios,  

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from ..footer.utils import getAllContacts, getAllInformations 
+from ..footer.utils import getContact, getAllInformations 
 from .models import TopDescH, Team, Tool, Button, PlatformDesc, ForumItens, SupportMaterial
 
 def redirect_to_home(request):
@@ -15,7 +15,7 @@ def home(request):
     supportMaterials = SupportMaterial.objects.all()
 
     context = {
-        'footerContacts': getAllContacts(),
+        'footerContact': getContact(),
         'footerInformations': getAllInformations(),
         'team': team,
         'tools': tools,

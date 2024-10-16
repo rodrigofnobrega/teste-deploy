@@ -1,7 +1,7 @@
 from .models import Contact, Information
 
-def getAllContacts():
-    return Contact.objects.all()
+def getContact():
+    return Contact.objects.first()
 
 def getAllInformations():
     return Information.objects.all()

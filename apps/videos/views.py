@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from ..footer.utils import getAllContacts, getAllInformations 
+from ..footer.utils import getContact, getAllInformations 
 from .models import Video, Category, PageDescription
 
 def videos(request):
@@ -8,7 +8,7 @@ def videos(request):
     pageDescription = PageDescription.objects.first();
 
     context = {
-        'footerContacts': getAllContacts(),
+        'footerContact': getContact(),
         'footerInformations': getAllInformations(),
         'videos': videos,
         'categorys': categorys,
