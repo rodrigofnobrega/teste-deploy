@@ -17,12 +17,10 @@
             {{ topDescH }} 
         </p>
 
-    {% for btn in buttons %}
         <div class="btn px-3 py-2 mb-5 mx-auto col-md-2 col-lg-1 col-6 animate__animated animate__fadeInUp animate__delay-2s">
-            <a href="{{ btn.urls }}"> Saber mais </a>
+            <a href="{{ button.urls }}"> Saber mais </a>
             <i class="fas fa-angle-right ms-2"></i>
         </div>
-    {% endfor %}
 
     </section>
 
@@ -80,20 +78,14 @@
         </h2>
 
         <div id="forum-items" class="row justify-content-between">
+            {% for fi in forumItens %}
             <div class="forum-item col-md-3">
-                <img src="{% static 'imgs/home/forum/books.jpeg' %}" class="box img-fluid col-12">
-                <h4 class="text-dark text-justify">Lorem ipsum dolor sit amet, consectetur</h4>
+                <a href= "{% url 'forum' %}">
+                    <img src="{{ fi.image.url }}" class="box img-fluid col-12">
+                    <h4 class="text-dark text-justify">{{ fi.description }}</h4>
+                </a>
             </div>
-
-            <div class="forum-item col-md-3">
-                <img src="{% static 'imgs/home/forum/family.jpeg' %}" class="box img-fluid col-12">
-                <h4>Lorem ipsum dolor sit amet, consectetur</h4>
-            </div>
-
-            <div class="forum-item col-md-3">
-                <img src="{% static 'imgs/home/forum/pencils.jpeg' %}" class="box img-fluid col-12">
-                <h4>Lorem ipsum dolor sit amet, consectetur</h4>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
@@ -108,10 +100,12 @@
             {{ platformDesc }}
         </p>
 
-        <div class="btn px-4 py-2 mb-5 fw-bold">
-            <a href= "{% url 'videos' %}" class="primary-color"> Assistir agora </a>
-            <i class="fas fa-angle-right ms-2"></i>
-        </div>
+        <a href= "{% url 'videos' %}" class="primary-color"> 
+            <div class="btn px-4 py-2 mb-5 fw-bold">
+                <span class="primary-color">Assistir agora</span>
+                <i class="fas fa-angle-right ms-2"></i>
+            </div>
+        </a>
     </section>
 
     <section id="support" class="col-md-10 col-11 mx-auto mb-5 animate__animated animate__fadeInUp">
@@ -121,20 +115,14 @@
         </h2>
 
         <div id="forum-items" class="row justify-content-between overflow-auto">
+            {% for sm in supportMaterials %}
             <div class="forum-item col-md-3">
-                <img src="{% static 'imgs/home/support/coloring.jpeg' %}" class="box img-fluid col-12">
-                <h4 class="text-dark text-justify">Desenhos para colorir</h4>
+                <a href= "{% url 'parents' %}">
+                    <img src="{{ sm.image.url }}" class="box img-fluid col-12">
+                    <h4 class="text-dark text-justify">{{ sm.description }}</h4>
+                </a>
             </div>
-
-            <div class="forum-item col-md-3">
-                <img src="{% static 'imgs/home/support/cards.jpeg' %}" class="box img-fluid col-12">
-                <h4>Cartões didáticos</h4>
-            </div>
-
-            <div class="forum-item col-md-3">
-                <img src="{% static 'imgs/home/support/lorem.jpeg' %}" class="box img-fluid col-12">
-                <h4>Outros materiais</h4>
-            </div>
+            {% endfor %}
         </div>
     </section>    
 </div>

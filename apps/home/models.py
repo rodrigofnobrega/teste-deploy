@@ -33,3 +33,17 @@ class Button(models.Model):
 
     def __str__(self):
         return f'{self.urls}'
+    
+class ForumItens(models.Model):
+    image = models.ImageField(upload_to = 'images/', verbose_name = 'Imagem')
+    description = models.TextField(verbose_name = 'Descrição')
+
+    def __str__(self):
+        return f'{self.description} - {self.image}'
+     
+class SupportMaterial(models.Model):
+    image = models.ImageField(upload_to = 'images/', verbose_name = 'Imagem')
+    description = models.TextField(verbose_name = 'Descrição')
+
+    def __str__(self):
+        return f'{self.description} - {self.image}'
