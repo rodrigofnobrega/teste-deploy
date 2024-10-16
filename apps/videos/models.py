@@ -21,3 +21,9 @@ class Category(models.Model):
 
     def __str__(self):
         return f'{self.description} - {self.type}'
+    
+class PageDescription(models.Model):
+    description = models.CharField(max_length = 50, verbose_name = 'Descrição')
+    
+    def __str__(self):
+        return f'{self.description}'
