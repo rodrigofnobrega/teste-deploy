@@ -1,22 +1,28 @@
 from django.shortcuts import render, redirect
-from ..footer.utils import getAllContacts, getAllInformations 
-from .models import TopDescH, Team, Tool, Button
+from ..footer.utils import getContact, getAllInformations 
+from .models import TopDescH, Team, Tool, Button, PlatformDesc, ForumItens, SupportMaterial
 
 def redirect_to_home(request):
     return redirect('home')
 
 def home(request):
     topDescH = TopDescH.objects.first()
+    platFormDesc = PlatformDesc.objects.first()
+    forumItens = ForumItens.objects.all()
     team = Team.objects.all()
     tools = Tool.objects.all()
-    buttons = Button.objects.all()
+    button = Button.objects.first()
+    supportMaterials = SupportMaterial.objects.all()
 
     context = {
-        'footerContacts': getAllContacts(),
+        'footerContact': getContact(),
         'footerInformations': getAllInformations(),
         'team': team,
         'tools': tools,
         'topDescH': topDescH,
-        'buttons': buttons, 
+        'platformDesc': platFormDesc,
+        'button': button,
+        'forumItens': forumItens, 
+        'supportMaterials': supportMaterials, 
     }
     return render(request, 'home.html', context)

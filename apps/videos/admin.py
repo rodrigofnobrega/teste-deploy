@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django import forms
-from .models import TopImageV, Video, Category
+from .models import TopImageV, Video, Category, PageDescription
 
 class VideoForm(forms.ModelForm):
     class Meta:
@@ -21,3 +21,7 @@ class VideosAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('description', 'type')
+
+@admin.register(PageDescription)
+class PageDescription(admin.ModelAdmin):
+    list_display = ('description',)

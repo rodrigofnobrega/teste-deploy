@@ -17,7 +17,7 @@
                 <br>
 
                 <div style="font-size: 16px; max-width: 480px;">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis magna aliquet condimentum. Cras et turpis id eros tincidunt faucibus.</p>
+                    <p>{{ description }}</p>
                 </div>
 
                 <div class="btn px-3 py-2 mb-5">
@@ -29,10 +29,10 @@
                 <div class="img-ellipse">
                     <div class="img-ellipse-in"></div>
                 </div>
-        
-                <img src="{%static "imgs/forum/forum-img-1.png" %}" id="first">
-                <img src="{%static "imgs/forum/forum-img-2.png" %}" id="second">
-                <img src="{%static "imgs/forum/forum-img-3.png" %}" id="third">
+                
+                {% for i in top_images %}
+                    <img src="{{i.image.url}}" alt="{{ i.description }}" id="{{ i.pos }}">
+                {% endfor %}
             </div>
         </div>
 

@@ -7,3 +7,9 @@ def getNameChoices():
         ('Porco Anônimo', 'Porco Anônimo'),
     ]  
 
+def getPosTopImages():
+    return [
+        ('first', 'Primeira'),
+        ('second', 'Segunda'),
+        ('third', 'Terceira'),
+    ]

@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import TopImageF, Post, Comment, PopularTopic
+from .models import TopImage, Post, Comment, PopularTopic, PageDescription
 
-@admin.register(TopImageF)
+@admin.register(TopImage)
 class TopImageFAdmin(admin.ModelAdmin):
-    list_display = ('title', 'image', 'description')
+    list_display = ('image', 'description', 'pos')
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -16,3 +16,7 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(PopularTopic)
 class PopularTopicAdmin(admin.ModelAdmin):
     list_display = ('title', 'quantityComments', 'date', 'subject')
+
+@admin.register(PageDescription)
+class PageDescription(admin.ModelAdmin):
+    list_display = ('description',)

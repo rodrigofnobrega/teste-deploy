@@ -2,14 +2,15 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 from random import choice
 from .utils import getNameChoices
-from ..footer.utils import getAllContacts, getAllInformations 
-from .models import Post, Comment, PopularTopic, TopImageF
+from ..footer.utils import getContact, getAllInformations 
+from .models import Post, Comment, PopularTopic, TopImage, PageDescription
 
 def forum(request):
     posts = Post.objects.all()
     comments = Comment.objects.all()
     popular_topics = PopularTopic.objects.all()
-    top_images = TopImageF.objects.all()
+    top_images = TopImage.objects.all()
+    description = PageDescription.objects.first()
     current_date = timezone.now()
 
     comentarios_por_post = {}
@@ -42,12 +43,13 @@ def forum(request):
         post.comentado_por = list({comment.userNameComment for comment in comments if comment.post.id == post.id})
 
     context = {
-        'footerContacts': getAllContacts(),
+        'footerContact': getContact(),
         'footerInformations': getAllInformations(),
         'posts': posts,
         'comments': comentarios,  
         'popular_topics': popular_topics,
         'top_images': top_images,
+        'description': description,
     }
 
     return render(request, 'forum.html', context)

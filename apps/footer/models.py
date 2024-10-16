@@ -12,10 +12,8 @@ class Contact(models.Model):
         return f'{self.phoneNumber} - {self.email}'
     
 class Information(models.Model):
-    randomUrl1 = models.URLField(max_length = 255, verbose_name ='URL qualquer')
-    randomUrl2 = models.URLField(max_length = 255, verbose_name ='URL qualquer')
-    randomUrl3 = models.URLField(max_length = 255, verbose_name ='URL qualquer')
-    whoAreWe = models.URLField(max_length = 255, verbose_name = 'Quem somos')
+    information_name = models.CharField(max_length = 30, verbose_name = 'Nome Site')
+    information_url = models.URLField(max_length = 255, verbose_name ='URL Site')
     
     def __str__(self):
-        return f'{self.whoAreWe} - {self.randomUrl1} - {self.randomUrl2} - {self.randomUrl3}'
+        return f'{self.information_name} - {self.information_url}'
