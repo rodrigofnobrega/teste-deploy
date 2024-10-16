@@ -22,6 +22,12 @@ class TopDescH(models.Model):
     def __str__(self):
         return f'{self.description}'
     
+class PlatformDesc(models.Model):
+    description = models.TextField(verbose_name = 'Descrição')
+    
+    def __str__(self):
+        return f'{self.description}'
+    
 class Button(models.Model):
     urls = models.URLField(max_length=200, verbose_name='Saiba mais urls')
 
